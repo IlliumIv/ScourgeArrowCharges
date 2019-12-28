@@ -15,7 +15,7 @@ namespace ScourgeArrowCharges
         {
             Name = "ScourgeArrowCharges";
 
-            _mainWork = new Coroutine(() => RealeaseCharge(), new WaitTime(Settings.TimeCheckCharges), this, "ScourgeArrow Realease");
+            _mainWork = new Coroutine(RealeaseCharge(), this, "ScourgeArrow Realease");
             Core.ParallelRunner.Run(_mainWork);
 
             Settings.TimeCheckCharges.OnValueChanged += (sender, b) =>
@@ -45,11 +45,6 @@ namespace ScourgeArrowCharges
                 }
                 yield return new WaitTime(Settings.TimeCheckCharges);
             }
-        }
-        
-        public override void Render()
-        {
-            return;
         }
     }
    
