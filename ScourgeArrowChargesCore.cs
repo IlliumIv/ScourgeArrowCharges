@@ -36,8 +36,8 @@ namespace ScourgeArrowCharges
         {
             while (true)
             {
-                var buffs = GameController.EntityListWrapper.Player.GetComponent<Life>().Buffs.ToList();
-                if (buffs.Exists(b => b.Name == "virulent_arrow_counter" && b.Charges == 5))
+                var buffs = GameController.EntityListWrapper.Player.GetComponent<Buffs>().BuffsList;
+                if (buffs.Exists(b => b.Name == "virulent_arrow_counter" && b.BuffCharges == 5))
                 {
                     if (!Settings.LeftClick)
                         yield return  MouseTools.MouseLeftClickEvent();
